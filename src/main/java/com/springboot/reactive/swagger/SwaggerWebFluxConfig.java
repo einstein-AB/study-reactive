@@ -1,4 +1,4 @@
-package com.springboot.reactive.config;
+package com.springboot.reactive.swagger;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.config.ResourceHandlerRegistry;
@@ -13,3 +13,5 @@ public class SwaggerWebFluxConfig implements WebFluxConfigurer {
                 .addResourceLocations("classpath:/META-INF/resources/");
     }
 }
+
+

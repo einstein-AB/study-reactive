@@ -1,7 +1,7 @@
-package com.springboot.reactive.restful.controller;
+package com.springboot.reactive.restVSfunctional.restful.controller;
 
-import com.springboot.reactive.restful.dto.Customer;
-import com.springboot.reactive.restful.service.CustomerService;
+import com.springboot.reactive.restVSfunctional.restful.dao.CustomerDao;
+import com.springboot.reactive.restVSfunctional.restful.dto.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,15 +16,15 @@ import java.util.List;
 public class CustomerController {
 
     @Autowired
-    private CustomerService customerService;
+    private CustomerDao customerDao;
 
     @GetMapping("/rest")
     public List<Customer> getCustomers() {
-        return customerService.getCustomers();
+        return customerDao.getCustomers();
     }
 
     @GetMapping (value = "/stream", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<Customer> getCustomersStream() {
-        return customerService.getCustomersStream();
+        return customerDao.getCustomersStream();
     }
 }

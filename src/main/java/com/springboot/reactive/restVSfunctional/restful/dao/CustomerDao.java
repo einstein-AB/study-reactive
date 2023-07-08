@@ -1,6 +1,6 @@
-package com.springboot.reactive.restful.dao;
+package com.springboot.reactive.restVSfunctional.restful.dao;
 
-import com.springboot.reactive.restful.dto.Customer;
+import com.springboot.reactive.restVSfunctional.restful.dto.Customer;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Flux;
 

@@ -1,4 +1,4 @@
-package com.springboot.reactive.restful.dto;
+package com.springboot.reactive.restVSfunctional.restful.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

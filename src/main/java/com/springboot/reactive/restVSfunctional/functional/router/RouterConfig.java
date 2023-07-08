@@ -1,7 +1,6 @@
-package com.springboot.reactive.functional.router;
+package com.springboot.reactive.restVSfunctional.functional.router;
 
-import com.springboot.reactive.functional.handler.CustomerHandler;
-import com.springboot.reactive.functional.handler.CustomerHandlerFunctional;
+import com.springboot.reactive.restVSfunctional.functional.handler.CustomerHandlerReactive;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,16 +12,12 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 public class RouterConfig {
 
     @Autowired
-    private CustomerHandler customerHandler;
-
-    @Autowired
-    private CustomerHandlerFunctional customerHandlerFunctional;
+    private CustomerHandlerReactive customerHandlerReactive;
 
     @Bean
     public RouterFunction<ServerResponse> routerFunction() {
         return RouterFunctions.route()
-                .GET("/router/customers", customerHandler::getCustomerList)
-                .GET("/router/customers/stream", customerHandlerFunctional::getCustomerListStream)
+                .GET("/router/customers/stream", customerHandlerReactive::getCustomerListStream)
                 .build();
     }
 }
